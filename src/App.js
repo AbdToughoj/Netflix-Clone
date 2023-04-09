@@ -1,8 +1,13 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import Home from "./Components/home/Home";
 
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <Home />
+    </>
+  );
+    
 }
 
 export default App;
