@@ -4,7 +4,9 @@ export default  function MovieList (props){
         <>
         {
             props.trending.map(trending => {
-                return <Movie trending={trending} />;
+                return (
+                  <Movie trending={trending} commentHandler={props.commentHandler} />
+                );
             })
 
         }

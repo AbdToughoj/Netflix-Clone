@@ -22,7 +22,7 @@ export default function Movie(props) {
           </Button>
         </Card.Body>
       </Card>
-      <ModalMovie show={show} handleClose={handleClose} trending={props.trending} imgUrl={imgUrl} />
+      <ModalMovie show={show} handleClose={handleClose} trending={props.trending} imgUrl={imgUrl} commentHandler={props.commentHandler} />
     </>
   );
 }

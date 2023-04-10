@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import MovieList from "../movieList/MovieList"
+import MovieList from "../movieList/MovieList";
 
 export default function Home() {
   const [trending, setTrending] = useState([]);
@@ -12,7 +12,17 @@ export default function Home() {
     const trendingData = await response.json();
 
     setTrending(trendingData);
-    console.log(trendingData);
+  }
+
+  function commentHandler(newTrending, id) {
+    trending.map((trending) => {
+      if (trending.id === id) {
+        trending.comment = newTrending.userComment;
+        return trending;
+      } else {
+        return trending;
+      }
+    });
   }
 
   useEffect(() => {
@@ -21,7 +31,7 @@ export default function Home() {
 
   return (
     <>
-      <MovieList trending={trending} />
+      <MovieList trending={trending} commentHandler={commentHandler} />
     </>
   );
 }
